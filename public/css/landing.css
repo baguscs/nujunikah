@@ -1,0 +1,62 @@
+.playfair-display {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+/* Visi & Misi Section */
+.visi-misi-section {
+    display: block;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.visi,
+.misi {
+    width: 100%;
+}
+
+.visi h2,
+.misi h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #697d63;
+}
+
+.visi-box,
+.misi-box {
+    background-color: #f1e3d6;
+    border-radius: 15px;
+    padding: 20px;
+    color: #5a4235;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.visi-box {
+    background-color: #c1a082; /* Warna VISI */
+}
+
+.misi-box {
+    background-color: #697d63; /* Warna MISI */
+    color: white;
+}
+
+.pinyon-script-regular {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
