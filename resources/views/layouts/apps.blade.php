@@ -23,6 +23,8 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
+    @stack('styles')
+
 </head>
 
 <body id="page-top">
@@ -70,8 +72,8 @@
                     <span>Pegawai</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('events.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('events.index') }}">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Event</span>
                 </a>

@@ -18,4 +18,14 @@ class Client extends Model
 
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
+
+    /**
+     * Get the user associated with the Client
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function event()
+    {
+        return $this->hasOne(Event::class);
+    }
 }

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_Event extends Model
 {
-    protected $table = 'detail_event';
+    protected $table = 'detail_events';
     protected $primaryKey = 'id';
-    protected $fillable = ['client_id', 'date', 'budget', 'pesan', 'status'];
+    protected $fillable = ['event_id', 'vendor_id'];
     protected $guarded = ['id'];
 }

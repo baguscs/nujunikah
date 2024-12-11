@@ -21,4 +21,14 @@ class Event extends Model
     ];
 
     protected $primaryKey = 'id';
+
+    /**
+     * Get the client that owns the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
 }
