@@ -64,8 +64,8 @@
                     <span>Tips & Tricks</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Pegawai</span>
                 </a>
