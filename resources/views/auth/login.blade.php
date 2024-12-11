@@ -87,7 +87,7 @@
     <div class="form-container">
         <h2 class="form-title acme-regular">Login</h2>
         <p class="form-subtitle inter">Silahkan masukkan email dan password Anda yang telah terdaftar.</p>
-        @error('title')
+        @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <form action="{{ route('login') }}" method="POST">

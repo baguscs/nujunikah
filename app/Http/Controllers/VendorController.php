@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Vendor;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
 
 class VendorController extends Controller
 {
@@ -12,7 +14,13 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        $vendors = Vendor::all();
+
+        $title = 'Konfirmasi hapus data vendor!';
+        $text = "Apakah anda yakin ingin menghapus data vendor ini?";
+        confirmDelete($title, $text);
+
+        return view('vendor.index', compact('vendors'));
     }
 
     /**
@@ -20,7 +28,7 @@ class VendorController extends Controller
      */
     public function create()
     {
-        //
+        return view('vendor.create');
     }
 
     /**
@@ -28,7 +36,24 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'kategori' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::error('Mohon Perihatikan Form Input Anda', 'Validasi Error');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        Vendor::create([
+            'nama' => $request->nama,
+            'kategori' => $request->kategori,
+        ]);
+
+        Alert::toast('Data Vendor Berhasil Ditambahkan','success')->autoClose(5000)->position('top-right');
+
+        return redirect()->route('vendors.index');
     }
 
     /**
@@ -44,7 +69,8 @@ class VendorController extends Controller
      */
     public function edit(Vendor $vendor)
     {
-        //
+        $vendor = Vendor::find($vendor->id);
+        return view('vendor.edit', compact('vendor'));
     }
 
     /**
@@ -52,7 +78,25 @@ class VendorController extends Controller
      */
     public function update(Request $request, Vendor $vendor)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'kategori' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::error('Mohon Perihatikan Form Input Anda', 'Validasi Error');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $vendor = Vendor::find($vendor->id);
+        $vendor->update([
+            'nama' => $request->nama,
+            'kategori' => $request->kategori,
+        ]);
+
+        Alert::toast('Data Vendor Berhasil Diubah','success')->autoClose(5000)->position('top-right');
+
+        return redirect()->route('vendors.index');
     }
 
     /**
@@ -60,6 +104,11 @@ class VendorController extends Controller
      */
     public function destroy(Vendor $vendor)
     {
-        //
+        $vendor = Vendor::find($vendor->id);
+        $vendor->delete();
+
+        Alert::toast('Data Vendor Berhasil Dihapus','success')->autoClose(5000)->position('top-right');
+
+        return redirect()->route('vendors.index');
     }
 }

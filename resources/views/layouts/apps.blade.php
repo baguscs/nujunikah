@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -39,16 +40,16 @@
             </a>
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="margin-top: 120px">
+            <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" style="margin-top: 120px">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('vendors.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('vendors.index') }}">
                     <i class="fas fa-fw fa-store"></i>
-                    <span>Veendor</span>
+                    <span>Vendor</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -111,6 +112,7 @@
 
                 <!-- Begin Page Content -->
                 @yield('content')
+                @include('sweetalert::alert')
                 <!-- /.container-fluid -->
 
             </div>
@@ -140,9 +142,14 @@
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
 
+    <!-- Page level plugins -->
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
     <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+
+    @stack('scripts')
 
 </body>
 
