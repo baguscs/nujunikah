@@ -53,6 +53,7 @@
 
         .btn-custom:hover {
             background-color: #8c6245;
+            color: #ffffff;
         }
 
         .back-link {
@@ -84,9 +85,10 @@
 
 <body>
     <div class="form-container">
-        <h2 class="form-title acme-regular">Forget Password</h2>
-        <p class="form-subtitle inter">Silahkan masukkan email Anda yang telah terdaftar.</p>
-        <form>
+        <h2 class="form-title acme-regular">Login</h2>
+        <p class="form-subtitle inter">Silahkan masukkan email dan password Anda yang telah terdaftar.</p>
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="email" class="form-label inter">Email :</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter your email" required>

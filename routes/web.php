@@ -6,7 +6,10 @@ Route::get('/', function () {
     return view('landing');
 });
 
-// Route::get('/landing', function () { return view('landing'); })->name('user');
+Route::get('/dashboard', function () {
+    return view('home');
+});
+
 
 Auth::routes();
 
