@@ -137,6 +137,7 @@ class EventController extends Controller
             'date' => ['required'],
             'budget' => ['required', 'numeric'],
             'pesan' => ['required'],
+            'status' => ['required'],
             'vanue' => ['required'],
             'catering' => ['required'],
             'decoration' => ['required'],
@@ -164,6 +165,7 @@ class EventController extends Controller
             'date' => $request->date,
             'budget' => $request->budget,
             'pesan' => $request->pesan,
+            'status' => $request->status,
         ]);
 
         $vendor = [

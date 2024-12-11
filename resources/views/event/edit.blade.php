@@ -24,7 +24,7 @@
                             Data Client
                         </div>
                         <hr class="sidebar-divider">
-                        <form action="{{ route('events.update', $client->id) }}" method="POST">
+                        <form action="{{ route('events.update', $event->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
@@ -115,6 +115,29 @@
                                     <textarea name="pesan" class="form-control @error('pesan') is-invalid @enderror" id="pesan" cols="30"
                                         rows="3" placeholder="Masukkan Pesan" required>{{ $event->pesan }}</textarea>
                                     @error('pesan')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="budget" class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select name="status" class="form-control @error('status') is-invalid @enderror"
+                                        id="status" required>
+                                        <option value="">Pilih Status</option>
+                                        <option value="{{ App\Models\Event::STATUS_SCHEDULED }}"
+                                            @if ($event->status == App\Models\Event::STATUS_SCHEDULED) selected @endif>
+                                            {{ App\Models\Event::STATUS_SCHEDULED }}</option>
+                                        <option value="{{ App\Models\Event::STATUS_PROCESS }}"
+                                            @if ($event->status == App\Models\Event::STATUS_PROCESS) selected @endif>
+                                            {{ App\Models\Event::STATUS_PROCESS }}</option>
+                                        <option value="{{ App\Models\Event::STATUS_COMPLETED }}"
+                                            @if ($event->status == App\Models\Event::STATUS_COMPLETED) selected @endif>
+                                            {{ App\Models\Event::STATUS_COMPLETED }}</option>
+                                    </select>
+                                    @error('status')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
