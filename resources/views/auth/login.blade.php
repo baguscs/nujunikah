@@ -87,15 +87,20 @@
     <div class="form-container">
         <h2 class="form-title acme-regular">Login</h2>
         <p class="form-subtitle inter">Silahkan masukkan email dan password Anda yang telah terdaftar.</p>
+        @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="email" class="form-label inter">Email :</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email"
+                    required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label inter">Password :</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                <input type="password" name="password" class="form-control" id="password"
+                    placeholder="Enter your password" required>
             </div>
             <div class="d-grid">
                 <button type="submit" class="btn btn-custom inter">Login</button>
