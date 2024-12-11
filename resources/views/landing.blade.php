@@ -54,7 +54,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-outline-success" type="button"
+            <a href="{{ route('login') }}" class="btn btn-outline-success" type="button"
                 style="font-size: 20px; background-color: #5F6F52; color: #ffffff; border-color: #5F6F52; boder-radius: 30px">Login</a>
         </div>
     </nav>
@@ -402,7 +402,8 @@
                 <img src="{{ asset('images/handsome.png') }}" alt="" width="15%"
                     style="margin-right: 85px">
                 <img src="{{ asset('images/3cd.png') }}" alt="" width="15%" style="margin-right: 85px">
-                <img src="{{ asset('images/janji.png') }}" alt="" width="15%" style="margin-right: 85px">
+                <img src="{{ asset('images/janji.png') }}" alt="" width="15%"
+                    style="margin-right: 85px">
                 <img src="{{ asset('images/kei.png') }}" alt="" width="15%">
             </div>
         </div>
