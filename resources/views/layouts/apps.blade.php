@@ -84,8 +84,8 @@
                     <span>Testimoni</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('notifications.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('notifications.index') }}">
                     <i class="fas fa-fw fa-bell"></i>
                     <span>Notifikasi</span>
                 </a>

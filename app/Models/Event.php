@@ -51,4 +51,14 @@ class Event extends Model
     {
         return $this->hasOne(Gallery::class);
     }
+
+    /**
+     * Get the notif associated with the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function notif()
+    {
+        return $this->hasOne(Notif::class);
+    }
 }
