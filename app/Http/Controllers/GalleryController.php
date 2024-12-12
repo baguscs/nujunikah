@@ -29,7 +29,11 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $events = Event::where('status', Event::STATUS_COMPLETED)->get();
+        $events = Event::where('status', Event::STATUS_COMPLETED)
+            ->whereNotIn('id', function($query) {
+                $query->select('event_id')->from('galleries');
+            })
+            ->get();
         return view('gallery.create', compact('events'));
     }
 
