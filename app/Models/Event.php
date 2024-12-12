@@ -41,4 +41,14 @@ class Event extends Model
     {
         return $this->hasOne(Testimoni::class);
     }
+
+    /**
+     * Get the galerry associated with the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function gallery(): HasOne
+    {
+        return $this->hasOne(Gallery::class);
+    }
 }

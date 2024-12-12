@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')->references('id')->on('clients')->onDelete('cascade');
-            $table->string('thubmnail');
+            $table->foreignId('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->string('foto');
             $table->timestamps();
         });
     }

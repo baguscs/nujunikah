@@ -9,9 +9,19 @@ class Gallery extends Model
     protected $table = 'galleries';
 
     protected $fillable = [
-        'client_id', 'thubmnail'
+        'event_id', 'thubmnail'
     ];
 
     protected $primaryKey = 'id';
+
+    /**
+     * Get the event that owns the Gallery
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_id');
+    }
 
 }

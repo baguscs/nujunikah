@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_Gallery extends Model
 {
-    protected $table = 'detail_gallery';
+    protected $table = 'detail_galleries';
 
     protected $fillable = [
-        'event_id', 'vendor_id'
+        'gallery_id', 'image'
     ];
 
     protected $primaryKey = 'id';

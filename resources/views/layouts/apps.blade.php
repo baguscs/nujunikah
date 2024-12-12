@@ -54,8 +54,8 @@
                     <span>Vendor</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('galleries.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('galleries.index') }}">
                     <i class="fas fa-fw fa-images"></i>
                     <span>Gallery</span>
                 </a>
