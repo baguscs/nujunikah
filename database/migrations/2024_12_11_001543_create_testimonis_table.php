@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('testimonis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')->references('id')->on('clients')->onDelete('cascade');
-            $table->string('testimoni');
+            $table->foreignId('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->string('ulasan');
             $table->timestamps();
         });
     }

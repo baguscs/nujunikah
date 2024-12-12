@@ -36,14 +36,14 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #5F6F52">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center " href="{{ route('home') }}">
                 <img src="{{ asset('images/dashboard/logo.png') }}" alt="" width="170"
                     style="margin-top: 100px">
             </a>
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" style="margin-top: 120px">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}" style="margin-top: 120px">
+                <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -76,6 +76,12 @@
                 <a class="nav-link collapsed" href="{{ route('events.index') }}">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Event</span>
+                </a>
+            </li>
+            <li class="nav-item {{ request()->routeIs('testimonials.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('testimonials.index') }}">
+                    <i class="fas fa-fw fa-star"></i>
+                    <span>Testimoni</span>
                 </a>
             </li>
             <li class="nav-item">

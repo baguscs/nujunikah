@@ -31,4 +31,14 @@ class Event extends Model
     {
         return $this->belongsTo(Client::class, 'client_id');
     }
+
+    /**
+     * Get the testimoni associated with the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function testimoni()
+    {
+        return $this->hasOne(Testimoni::class);
+    }
 }
