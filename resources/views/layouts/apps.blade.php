@@ -60,8 +60,8 @@
                     <span>Gallery</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+            <li class="nav-item {{ request()->routeIs('tips.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('tips.index') }}">
                     <i class="fas fa-fw fa-lightbulb"></i>
                     <span>Tips & Tricks</span>
                 </a>

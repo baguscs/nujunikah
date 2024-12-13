@@ -23,3 +23,5 @@ Route::resource('/galleries', App\Http\Controllers\GalleryController::class);
 
 Route::resource('/notifications', App\Http\Controllers\NotificationController::class);
 Route::get('/notifications/send-message/{id}', [App\Http\Controllers\NotificationController::class, 'sendMessage'])->name('notifications.sendMessage');
+
+Route::resource('/tips', App\Http\Controllers\TipsController::class);
