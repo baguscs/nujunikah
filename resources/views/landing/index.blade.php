@@ -1,38 +1,11 @@
-<!doctype html>
-<html lang="en">
+@extends('landing.apps')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nujunikah</title>
-    <link rel="icon" href="{{ asset('images/logo.png') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
-
-</head>
-
-<body>
-    <a href="#" title="Go to top" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"><img
-            src="{{ asset('images/logo_wa.png') }}" alt="" width="80"></a>
-
+@section('content')
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid container">
-            <a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png') }}" alt=""
-                    width="90"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png') }}" alt="" width="90"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
@@ -87,8 +60,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 justify-content-center">
-                    <img src="{{ asset('images/logo.png') }}" style="margin-top: 100px; margin-bottom: 100px"
-                        alt="" width="70%">
+                    <img src="{{ asset('images/logo.png') }}" style="margin-top: 100px; margin-bottom: 100px" alt=""
+                        width="70%">
                 </div>
                 <div class="col-md-6" style="margin-top: 30px">
                     <div class="visi-misi-section">
@@ -207,8 +180,7 @@
             <p class="playfair-display text-center mt-5 fw-bold" style="color: #5F6F52; font-size: 40px">Overjoyed To
                 Have
                 Work</p>
-            <p class="playfair-display text-center fw-bold"
-                style="color: #B99470; font-size: 40px; margin-top: -20px">
+            <p class="playfair-display text-center fw-bold" style="color: #B99470; font-size: 40px; margin-top: -20px">
                 Featured In</p>
 
             <div class="accordion" id="accordionExample" style="margin-bottom: 50px">
@@ -219,8 +191,7 @@
                             VANUE
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show"
-                        data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="row">
                                 @foreach ($vendors as $item)
@@ -361,13 +332,11 @@
             <p class="playfair-display text-center mt-5 fw-bold" style="color: #5F6F52; font-size: 40px">What They're
                 Saying</p>
 
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
-                data-bs-interval="2000">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
                 <div class="carousel-inner">
                     @foreach ($testimonis as $testimoni)
                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                            <p class="playfair-display text-center"
-                                style="color: #5F6F52; font-size: 30px; padding:20px">
+                            <p class="playfair-display text-center" style="color: #5F6F52; font-size: 30px; padding:20px">
                                 "{{ $testimoni->ulasan }}"</p>
                         </div>
                     @endforeach
@@ -398,8 +367,7 @@
                 @foreach ($tips as $item)
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{ asset('storage/tips/' . $item->gambar) }}" class="card-img-top"
-                                alt="...">
+                            <img src="{{ asset('storage/tips/' . $item->gambar) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->judul }}</h5>
                                 <p class="card-text">{{ Str::limit($item->isi, 100) }}</p>
@@ -414,11 +382,12 @@
         </div>
 
         <center>
-            <a href="" class="btn btn-outline-success" style="font-size: 20px">Selengkapnya</a>
+            <a href="{{ route('tipsAndTricks') }}" class="btn btn-outline-success"
+                style="font-size: 20px">Selengkapnya</a>
         </center>
 
-        <p class="playfair-display text-center mt-5 fw-bold"
-            style="color: #5F6F52; font-size: 40px; margin-top: 100px">OVERJOYED TO
+        <p class="playfair-display text-center mt-5 fw-bold" style="color: #5F6F52; font-size: 40px; margin-top: 100px">
+            OVERJOYED TO
             HAVE WORK FEATURED IN
         </p>
 
@@ -477,11 +446,4 @@
         </center>
         <br>
     </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="{{ asset('js/landing.js') }}"></script>
-</body>
-
-</html>
+@endsection

@@ -1,11 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Vendor;
+use App\Models\Testimoni;
+use App\Models\Gallery;
+use App\Models\Tips;
 
 
 Route::get('/', function () {
-    return view('landing');
-});
+    $vendors = Vendor::all();
+    $testimonis = Testimoni::orderBy('id', 'desc')->take(3)->get();
+    $galleries = Gallery::orderBy('id', 'desc')->take(4)->get();
+    $tips = Tips::orderBy('id', 'desc')->take(3)->get();
+
+    return view('landing.index', compact('vendors', 'testimonis', 'galleries', 'tips'));
+})->name('landing');
+
+Route::get('/tips-&-tricks', function () {
+    $tips = Tips::all();
+    return view('landing.tips', compact('tips'));
+})->name('tipsAndTricks');
 
 
 Auth::routes();
