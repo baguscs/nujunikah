@@ -29,7 +29,7 @@ class NotificationController extends Controller
      */
     public function create()
     {
-        $events = Event::where('status', Event::STATUS_COMPLETED)
+        $events = Event::where('status', Event::STATUS_PROCESS)
             ->whereNotIn('id', function($query) {
                 $query->select('event_id')->from('notifications');
             })
