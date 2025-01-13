@@ -59,7 +59,7 @@ class NotificationController extends Controller
             'file' => $request->file,
         ]);
 
-        Alert::toast('Data Vendor Berhasil Ditambahkan','success')->autoClose(5000)->position('top-right');
+        Alert::toast('Data Notifikasi Berhasil Ditambahkan','success')->autoClose(5000)->position('top-right');
         return redirect()->route('notifications.index');
     }
 

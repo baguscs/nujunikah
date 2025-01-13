@@ -5,7 +5,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Neotifikasi</h1>
+            <h1 class="h3 mb-0 text-gray-800">Notifikasi</h1>
         </div>
 
         <div class="row">
@@ -16,7 +16,7 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <div class="d-flex justify-content-between">
-                            <h6 class="m-0 font-weight-bold" style="color: #B99470">Data Norifikasi</h6>
+                            <h6 class="m-0 font-weight-bold" style="color: #B99470">Data Notifikasi</h6>
                             <div>
                                 <a href="{{ route('notifications.create') }}" class="btn btn-success btn-icon-split">
                                     <span class="icon text-white-50">
