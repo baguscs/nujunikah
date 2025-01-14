@@ -43,7 +43,7 @@
                                         name="kategori" aria-label="Default select example">
                                         <option selected>Pilih Kategori Vendor</option>
                                         @foreach (App\Models\Vendor::CATEGORI as $key => $value)
-                                            <option value="{{ $key }}">{{ $value }}</option>
+                                            <option value="{{ $value }}">{{ $value }}</option>
                                         @endforeach
                                     </select>
 
