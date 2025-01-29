@@ -23,8 +23,9 @@
 </head>
 
 <body>
-    <a href="#" title="Go to top" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"><img
-            src="{{ asset('images/logo_wa.png') }}" alt="" width="80"></a>
+    <a href="https://wa.me/+6282218818888" title="Go to top"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"><img src="{{ asset('images/logo_wa.png') }}"
+            alt="" width="80"></a>
 
     @yield('content')
 

@@ -44,9 +44,9 @@
                         your wedding very Special”
                     </p>
                     <center>
-                        <button class="btn btn-success mt-4"
+                        <a href="https://wa.me/+6282218818888" class="btn btn-success mt-4"
                             style="font-size: 28px; background-color: #B99470; color: white; border-color: #B99470; border-radius: 30px; padding-left: 50px; padding-right: 50px">Contact
-                            Now!</button>
+                            Now!</a>
                     </center>
                 </div>
                 <div class="col-md-5" style="margin-top: 120px">
